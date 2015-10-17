@@ -1,0 +1,6 @@
+.sass-cache/
+
+# ignore node/grunt dependencies
+# these are easily recreated on a new project
+# with `npm install`
+node_modules/

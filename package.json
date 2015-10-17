@@ -1,0 +1,23 @@
+{
+  "name": "grunt_demo",
+  "version": "1.0.0",
+  "description": "Grunt demo",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^0.4.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sheelah/Grunt-Demo.git"
+  },
+  "author": "Sheelah Brennan <sheelah@sheelahb.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sheelah/Grunt-Demo/issues"
+  },
+  "homepage": "https://github.com/sheelah/Grunt-Demo#readme"
+}
