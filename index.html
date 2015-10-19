@@ -3,42 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <title>Hike New Mexico</title>
+  <link rel="stylesheet" href="assets/stylesheets/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,700|Open+Sans:400,700">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="site-title">
-      <a href="/">Hike New Mexico</a>
+    <div class="wrap">
+      <div class="site-title">
+        <a href="/">Hike New Mexico</a>
+      </div>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li class="search-toggle">
+            <i class="fa fa-search"></i>
+            <a href="#search-container"></a>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <nav class="site-nav">
-      <ul>
+    <div id="search-container" class="search-box-wrapper">
+      <div class="search-box">
+        <form role="search" method="get" class="search-form" action="/">
+          <label>
+            <input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" title="Search for:" />
+          </label>
+          <input type="submit" class="search-submit" value="Search" />
+        </form>
+      </div>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Explore New Mexico on Foot</h1>
+      <p>Miles and miles of trails await you.</p>
+      <a class="button cta" href="/blog">Find a hike</a>
+    </div>
+  </section>
+  <section class="site-overview">
+    <div class="wrap">
+      <div class="overview-item">
+        <i class="fa fa-newspaper-o"></i>
+        <h2>Blog</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="overview-item">
+        <i class="fa fa-user"></i>
+        <h2>About</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="overview-item">
+        <i class="fa fa-envelope-o"></i>
+        <h2>Contact</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+  </section>
+  <footer class="main-footer">
+    <div class="wrap">
+      <ul class="footer-navigation">
+        <li><a href="/">Home</a></li>
         <li><a href="/blog">Blog</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
-    </nav>
-  </header>
-  <section class="hero">
-    <h1>Explore New Mexico on Foot</h1>
-    <p>Miles and miles of trails await you.</p>
-  </section>
-  <section class="site-overview">
-    <div>
-      <h2>Blog</h2>
+      <ul class="footer-social">
+        <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
+        <li><a href="#"><i class="fa fa-instagram"></i> Instagram</a></li>
+        <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
+      </ul>
     </div>
-    <div>
-      <h2>About</h2>
+    <div class="copyright">
+      <div class="wrap">
+        <p class="copyright">&copy; 2015 Hike New Mexico. All rights reserved.</p>
+      </div>
     </div>
-    <div>
-      <h2>Contact</h2>
-    </div>
-  </section>
-  <footer class="main-footer">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/blog">Blog</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/contact">Contact</a></li>
-    </ul>
   </footer>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="assets/js/show-search.js"></script>
 </body>
 </html>

@@ -1,4 +1,6 @@
 .sass-cache/
+style.css.map
+style.css
 
 # ignore node/grunt dependencies
 # these are easily recreated on a new project

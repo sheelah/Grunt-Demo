@@ -1,0 +1,27 @@
+/* _typography.scss */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Merriweather', serif;
+}
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+// icon fonts
+i.fa {
+  font-size: 3em;
+}
+
+.footer-social i.fa {
+  font-size: 1.4em;
+  margin-right: 0.4em;
+}
+
+.site-nav i.fa-search {
+  font-size: 1em;
+}

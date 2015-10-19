@@ -1,0 +1,72 @@
+/* _layout.scss */
+
+// clearfix
+.wrap:before,
+.search-container:before {
+  content: " ";
+  display: table;
+}
+
+.wrap:after,
+.search-container:after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+.wrap {
+  max-width: 75em; // 1200px
+  margin: 0 auto;
+  padding: 0 3%;
+}
+
+.site-title {
+  display: inline;
+  width: 30%;
+  float: left;
+}
+
+.site-nav {
+  display: inline;
+  width: 70%;
+  float: right;
+  text-align: right;
+  a {
+    text-decoration: none;
+    color: $body-text-color;
+  }
+}
+
+// Site overview section layout
+.site-overview {
+  padding: 4em 0;
+  overflow: hidden;
+}
+
+.overview-item {
+  width: calc(100%/3);
+  padding-right: 2em;
+  float: left;
+}
+
+.overview-item:last-of-type {
+  padding-right: 0;
+  padding-left: 2em;
+}
+
+// Main footer layout
+.main-footer {
+  padding-top: 2em;
+  overflow: hidden;
+}
+
+.main-footer ul {
+  width: calc(100%/2);
+  padding-right: 2em;
+  float: left;
+  padding-bottom: 2em;
+}
+
+.main-footer ul:last-of-type {
+  padding-right: 0;
+  padding-left: 2em;
+}

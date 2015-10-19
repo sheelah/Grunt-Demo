@@ -1,0 +1,59 @@
+/* _components.scss */
+
+// Buttons
+.button {
+  border: 2px solid $white;
+  border-radius: 3px;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  padding: 1em 1.5em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out;
+  &:visited {
+    color: $white;
+    text-decoration: none;
+  }
+  &:hover {
+    background: $white;
+    color: $jet;
+  }
+  &:active {
+    color: $jet;
+  }
+}
+
+// Header search
+.search-toggle {
+  cursor: pointer;
+}
+
+.search-box-wrapper {
+  display: none;
+  width: 100%;
+  z-index: 2;
+}
+
+.search-box {
+  background: $mid-dark-gray;
+  padding: 1em;
+  .search-field {
+    background-color: #fff;
+    border: 0;
+    border-radius: 3px;
+    padding: 1em;
+    margin: 0 auto;
+    float: right;
+    max-width: 25%;
+    margin: 0;
+    height: 0.8em;
+  }
+  .search-form {
+    overflow: hidden;
+  }
+  .search-submit {
+    display: none;
+  }
+}
