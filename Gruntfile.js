@@ -118,12 +118,36 @@ module.exports = function(grunt) {
       all: ['Gruntfile.js', 'assets/js/src/*.js'],
     },
 
+    // concatenate JS files
+    concat: {
+      options: {
+      stripBanners: true,
+      nonull: true,
+    },
+      main: {
+        src: 'assets/js/src/*.js',
+        dest: 'assets/js/site.js'
+      }
+    },
+
+    // minify concatenated JS and make source maps
+    uglify: {
+      main: {
+        options: {
+          sourceMap: true,
+          sourceMapIncludeSources: true,
+        },
+        src: '<%= concat.main.dest %>',
+        dest: 'assets/js/site.min.js'
+      }
+    },
+
   });
 
   // register tasks
   grunt.registerTask('default', ['dev']);
   grunt.registerTask('dev', ['browserSync', 'watch']);
-  grunt.registerTask('build', ['jshint', 'sass:dev', 'postcss:dev']);
+  grunt.registerTask('build', ['jshint', 'concat', 'uglify', 'sass:dev', 'postcss:dev']);
   grunt.registerTask('lint', ['jshint']);
 
 };
