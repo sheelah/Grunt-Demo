@@ -10,15 +10,26 @@ module.exports = function(grunt) {
   require('time-grunt')(grunt);
 
   grunt.initConfig({
+
+    // watch for changes and run tasks upon change
     watch: {
       sass: {
         files: ['assets/sass/**/*.{scss,sass}'],
         tasks: ['sass:dev', 'postcss']
       },
+      js: {
+        files: '<%= jshint.all %>',
+        tasks: ['jshint'],
+        options: {
+          spawn: false,
+        }
+      },
       options: {
         livereload: true
       }
     },
+
+    // compile Sass
     sass: {
       options: {
         sourceMap: true,
@@ -37,6 +48,8 @@ module.exports = function(grunt) {
         }]
       }
     },
+
+    // browser sync
     browserSync: {
       dev: {
         bsFiles: {
@@ -53,7 +66,7 @@ module.exports = function(grunt) {
           debugInfo: true,
           logConnections: true,
           notify: true,
-          proxy: appConfig['proxy'],
+          proxy: appConfig.proxy,
           ghostMode: {
             scroll: true,
             links: true,
@@ -62,6 +75,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     // postcss
     postcss: {
       options: {
@@ -75,11 +89,41 @@ module.exports = function(grunt) {
       }
     },
 
+    // javascript linting
+    jshint: {
+      options: {
+        reporter: require('jshint-stylish'),
+        node: true // enable node code
+      },
+      js: {
+        options: {
+          curly: true,
+          eqeqeq: true,
+          immed: true,
+          latedef: true,
+          newcap: true,
+          noarg: true,
+          sub: true,
+          undef: true,
+          unused: true,
+          boss: true,
+          eqnull: true,
+          browser: true,
+          globals: {
+            jQuery: true,
+            $: true,
+          }
+        }
+      },
+      all: ['Gruntfile.js', 'assets/js/src/*.js'],
+    },
+
   });
 
   // register tasks
   grunt.registerTask('default', ['dev']);
   grunt.registerTask('dev', ['browserSync', 'watch']);
-  grunt.registerTask('build', ['sass:dev', 'postcss:dev']);
+  grunt.registerTask('build', ['jshint', 'sass:dev', 'postcss:dev']);
+  grunt.registerTask('lint', ['jshint']);
 
 };

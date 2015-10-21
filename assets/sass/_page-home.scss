@@ -1,0 +1,33 @@
+/* _page-home.scss */
+
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.3)),url(../images/williams-lake.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 500px;
+  text-align: center;
+  color: $white;
+  h1 {
+    padding-top: 15%;
+    font-size: 2.4em;
+  }
+  p {
+    font-size: 1.4em;
+  }
+}
+
+.site-overview {
+  background: #e0d8cc;
+  text-align: center;
+}
+
+.overview-item .fa {
+  transition: all 0.4s ease-in-out;
+  &:hover {
+    transform: scale(1.4);
+  }
+}
+
+.cta {
+  margin-top: 1.5em;
+}

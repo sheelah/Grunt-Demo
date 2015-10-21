@@ -42,22 +42,6 @@ a {
   color: $white;
 }
 
-.hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.3)),url(../images/williams-lake.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 500px;
-  text-align: center;
-  color: $white;
-  h1 {
-    padding-top: 15%;
-    font-size: 2.4em;
-  }
-  p {
-    font-size: 1.4em;
-  }
-}
-
 .site-nav {
   ul {
     margin-top: 0.3em;
@@ -77,39 +61,3 @@ a {
   font-weight: 700;
 }
 
-.site-overview {
-  background: #e0d8cc;
-  text-align: center;
-}
-
-.overview-item .fa {
-  transition: all 0.4s ease-in-out;
-  &:hover {
-    transform: scale(1.4);
-  }
-}
-
-.main-footer {
-  background: $dark-gray;
-  color: $white;
-}
-
-.main-footer {
-  a,
-  a:hover,
-  a:visited {
-    text-decoration: none;
-    color: $white;
-  }
-  li {
-    margin-bottom: 0.5em;
-  }
-}
-
-.copyright {
-  background: $mid-dark-gray;
-}
-
-.cta {
-  margin-top: 1.5em;
-}

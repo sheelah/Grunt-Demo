@@ -8,7 +8,9 @@ $light-gray: #f5f5f5;
 $mid-dark-gray: #484848;
 $dark-gray: #333;
 $mid-blue: #3C6293;
+$dusty-white: #ececec;
 
 // Colors applied
 $accent-color: $mid-blue;
 $body-text-color: $jet;
+$to-top-button-hover-color: mix($dark-gray, white, 80%);

@@ -1,0 +1,93 @@
+/* _footer.scss */
+
+// Main footer
+.main-footer {
+  background: $dark-gray;
+  color: $white;
+}
+
+.main-footer {
+  a,
+  a:hover,
+  a:visited {
+    text-decoration: none;
+    color: $white;
+  }
+  li {
+    margin-bottom: 0.5em;
+  }
+}
+
+.copyright {
+  background: $mid-dark-gray;
+  padding: 0.2em 0;
+}
+
+
+// Back to top
+.to-top {
+  display: inline-block;
+  height: 45px;
+  width: 45px;
+  position: fixed;
+  border-radius: 3px;
+  bottom: 10px;
+  right: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  outline: 0;
+  background: rgba(0, 0, 0, 0.6);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s 0s, visibility 0s .3s;
+  z-index: 3;
+}
+
+.to-top.to-top-is-visible,
+.to-top.to-top-fade-out,
+.to-top:hover {
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+
+.to-top.to-top-is-visible {
+  visibility: visible;
+  opacity: 0.7;
+  outline: 0;
+}
+
+.to-top.to-top-fade-out {
+  // When user keeps scrolling down, button is out of focus and becomes less visible
+  opacity: .4;
+}
+
+.to-top:hover {
+  background: $to-top-button-hover-color;
+  opacity: 1;
+}
+
+.arrow-up {
+  position: relative;
+  display: inherit;
+  top: 40%;
+  left: 33%;
+  width: 0.8em;
+  height: 0.8em;
+  border: $dusty-white solid 4px;
+  border: rgba(255,255,255,0.95) solid 4px;
+  border-bottom: 0;
+  border-right: 0;
+  content: '';
+  background: transparent;
+  cursor: pointer;
+  outline: 0;
+  transform: rotate(45deg);
+  transition: border-color 0.3s;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    border-color: $white;
+  }
+  &:visited {
+    color: $white;
+  }
+}
