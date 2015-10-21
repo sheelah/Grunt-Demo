@@ -3,6 +3,12 @@ module.exports = function(grunt) {
 
   var appConfig = grunt.file.readJSON('app_config.json');
 
+  // load all grunt tasks from package.json automatically
+  require('load-grunt-tasks')(grunt);
+
+  // Show elapsed time
+  require('time-grunt')(grunt);
+
   grunt.initConfig({
     watch: {
       sass: {
@@ -70,13 +76,6 @@ module.exports = function(grunt) {
     },
 
   });
-
-  // load plugins
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-browser-sync');
-  grunt.loadNpmTasks('grunt-postcss');
-
 
   // register tasks
   grunt.registerTask('default', ['dev']);
