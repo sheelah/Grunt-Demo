@@ -37,6 +37,11 @@ a {
   }
 }
 
+::selection {
+  background: $jet;
+  color: $white;
+}
+
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.3)),url(../images/williams-lake.jpg);
   background-repeat: no-repeat;
@@ -75,6 +80,13 @@ a {
 .site-overview {
   background: #e0d8cc;
   text-align: center;
+}
+
+.overview-item .fa {
+  transition: all 0.4s ease-in-out;
+  &:hover {
+    transform: scale(1.4);
+  }
 }
 
 .main-footer {

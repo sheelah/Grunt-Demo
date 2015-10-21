@@ -7,7 +7,7 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: ['assets/sass/**/*.{scss,sass}'],
-        tasks: ['sass:dev']
+        tasks: ['sass:dev', 'postcss']
       },
       options: {
         livereload: true
@@ -37,8 +37,9 @@ module.exports = function(grunt) {
           src: [
             'assets/stylesheets/*.css',
             '**/*.html',
-            'images/*.jpg',
-            'images/*.png',
+            'assets/js/**/*.js',
+            'assets/images/*.jpg',
+            'assets/images/*.png',
           ],
         },
         options: {
@@ -55,6 +56,18 @@ module.exports = function(grunt) {
         }
       }
     },
+    // postcss
+    postcss: {
+      options: {
+        map: true,
+        processors: [
+          require('autoprefixer')({browsers: ['last 2 versions', 'ie 9', 'ios 6', 'android 4']})
+        ]
+      },
+      dev: {
+        src: 'assets/stylesheets/*.css'
+      }
+    },
 
   });
 
@@ -62,11 +75,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-browser-sync');
+  grunt.loadNpmTasks('grunt-postcss');
 
 
   // register tasks
   grunt.registerTask('default', ['dev']);
   grunt.registerTask('dev', ['browserSync', 'watch']);
-  grunt.registerTask('build', ['sass:dev']);
+  grunt.registerTask('build', ['sass:dev', 'postcss:dev']);
 
 };
