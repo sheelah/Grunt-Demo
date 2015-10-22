@@ -57,8 +57,7 @@ module.exports = function(grunt) {
             'assets/stylesheets/*.css',
             '**/*.html',
             'assets/js/**/*.js',
-            'assets/images/*.jpg',
-            'assets/images/*.png',
+            'assets/images/**/*.{png,jpg,jpeg,gif,webp,svg}',
           ],
         },
         options: {
@@ -142,12 +141,29 @@ module.exports = function(grunt) {
       }
     },
 
+    // image optimization
+    imagemin: {
+      main: {
+        options: {
+          optimizationLevel: 7,
+          progressive: true,
+          interlaced: true
+        },
+        files: [{
+          expand: true,
+          cwd: 'assets/images/src',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'assets/images/'
+        }]
+      }
+    },
+
   });
 
   // register tasks
   grunt.registerTask('default', ['dev']);
   grunt.registerTask('dev', ['browserSync', 'watch']);
-  grunt.registerTask('build', ['jshint', 'concat', 'uglify', 'sass:dev', 'postcss:dev']);
+  grunt.registerTask('build', ['jshint', 'concat', 'uglify', 'sass:dev', 'postcss:dev', 'imagemin']);
   grunt.registerTask('lint', ['jshint']);
 
 };

@@ -4,6 +4,8 @@ style.css
 app_config.json
 assets/js/*.js
 assets/js/*.map
+assets/images/*.jpg
+assets/images/*.png
 
 # ignore node/grunt dependencies
 # these are easily recreated on a new project
